@@ -6,6 +6,7 @@ export type BlockAlignItem = 'start' | 'center' | 'end';
 export type BlockAlign = { horizontal?: BlockAlignItem; vertical?: BlockAlignItem };
 
 export interface BlockProps {
+	children?: any;
 	stack?: boolean;
 	align?: BlockAlign;
 	important?: boolean;

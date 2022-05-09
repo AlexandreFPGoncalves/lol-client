@@ -1,4 +1,5 @@
 interface InitialPageProps {
+	children?: any;
 	style?: React.CSSProperties;
 }
 export const InitialPage: React.FC<InitialPageProps> = ({ children, style }) => {

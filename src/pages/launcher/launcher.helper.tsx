@@ -1,6 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { icons } from '../../assets';
-import { SocialMediaProps } from '../../components';
 
 interface LauncherProps {
 	resources: LauncherScreenResources;
@@ -16,22 +15,32 @@ interface LauncherProps {
 		isBackgroundWhite: boolean;
 		onClick: () => void;
 	}[];
+	handleIsCheckedOnClick: () => void;
+	isCheckboxChecked: boolean;
+	handleCanLogin: () => void;
+	canLogin: boolean;
 }
 export interface LauncherScreenResources {
 	title: string;
 	usernameLabel: string;
 	passwordLabel: string;
+	checkboxLabel: string;
+	signinLabel: string;
 }
 
 export const useLauncherHelper = (): LauncherProps => {
 	const resources = useMemo((): LauncherScreenResources => {
 		return {
-			title: 'MockTitle',
+			title: 'mockTitle',
+			signinLabel: 'Sign in',
 			usernameLabel: 'USERNAME',
 			passwordLabel: 'PASSWORD',
+			checkboxLabel: 'Stay signed in',
 		};
 	}, []);
 
+	const [isCheckboxChecked, setIsCheckboxChecked] = useState<boolean>(false);
+	const [canLogin, setCanLogin] = useState<boolean>(false);
 	const [values, setValues] = useState({
 		username: '',
 		password: '',
@@ -50,8 +59,28 @@ export const useLauncherHelper = (): LauncherProps => {
 			});
 		}
 
-		console.log(values);
+		if (values.username.length > 2 && values.password.length > 2) {
+			setCanLogin(true);
+		} else {
+			setCanLogin(false);
+		}
+		console.log('###', canLogin);
 	};
+
+	const handleIsCheckedOnClick = () => {
+		setIsCheckboxChecked(!isCheckboxChecked);
+		console.log('###', isCheckboxChecked);
+	};
+
+	const handleCanLogin = useCallback(() => {
+		if (values.username.length > 2 && values.password.length > 2) {
+			setCanLogin(true);
+			console.log('###', canLogin);
+		} else {
+			setCanLogin(false);
+			console.log('###', canLogin);
+		}
+	}, [values]);
 
 	const socialMediaButtons = [
 		{
@@ -82,5 +111,9 @@ export const useLauncherHelper = (): LauncherProps => {
 		handleOnChange,
 		values,
 		socialMediaButtons,
+		handleIsCheckedOnClick,
+		isCheckboxChecked,
+		handleCanLogin,
+		canLogin,
 	};
 };

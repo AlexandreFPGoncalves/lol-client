@@ -35,6 +35,9 @@ const StyledCustomInput = styled.div`
 		&:not(:placeholder-shown) ~ .form__label {
 			padding-left: 10px;
 		}
+		:hover {
+			background: #e4e4e4;
+		}
 	}
 
 	.form__label {

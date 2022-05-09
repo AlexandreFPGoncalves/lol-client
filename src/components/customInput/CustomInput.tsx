@@ -1,7 +1,6 @@
 import React from 'react';
 import StyledInputNumber from './CustomInput.styles';
 import { Block } from '..';
-import { images } from '../../assets';
 
 interface CustomInputProps {
 	label?: string;
@@ -13,15 +12,7 @@ interface CustomInputProps {
 	handlePasswordVisibility?: () => void;
 }
 
-export const CustomInput: React.FC<CustomInputProps> = ({
-	label,
-	onChange,
-	horizontalAlign,
-	value,
-	inputType,
-	handlePasswordVisibility,
-	isPasswordVisible,
-}) => {
+export const CustomInput: React.FC<CustomInputProps> = ({ label, onChange, horizontalAlign, value }) => {
 	return (
 		<StyledInputNumber>
 			<Block align={{ horizontal: horizontalAlign ? horizontalAlign : 'start' }}>

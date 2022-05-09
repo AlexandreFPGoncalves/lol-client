@@ -1,11 +1,20 @@
 import React from 'react';
-import { Block, InitialPage, CustomInput, SocialMediaButton } from '../../components';
+import { Block, InitialPage, CustomInput, SocialMediaButton, CustomCheckbox, LoginBtn } from '../../components';
 import { rem } from '../../helpers';
 import { useLauncherHelper } from './launcher.helper';
 import { images } from '../../assets';
 
 export const Launcher: React.FC = () => {
-	const { resources, handleOnChange, values, socialMediaButtons } = useLauncherHelper();
+	const {
+		resources,
+		handleOnChange,
+		values,
+		socialMediaButtons,
+		handleIsCheckedOnClick,
+		isCheckboxChecked,
+		handleCanLogin,
+		canLogin,
+	} = useLauncherHelper();
 
 	return (
 		<InitialPage style={{ backgroundColor: 'var(--grey-900)' }}>
@@ -37,7 +46,7 @@ export const Launcher: React.FC = () => {
 							<img src={images.riotLogo} alt="" style={{ width: '40%' }} />
 						</Block>
 						<Block stack align={{ horizontal: 'center' }} style={{ marginTop: rem(48) }}>
-							<p style={{ fontSize: rem(24), fontWeight: 600, margin: 0 }}>Sign in</p>
+							<p style={{ fontSize: rem(24), fontWeight: 600, margin: 0 }}>{resources.signinLabel}</p>
 						</Block>
 
 						<Block stack align={{ horizontal: 'center' }}>
@@ -68,18 +77,26 @@ export const Launcher: React.FC = () => {
 								/>
 							))}
 						</Block>
+
+						<Block style={{ marginTop: rem(16), marginLeft: rem(40) }}>
+							<CustomCheckbox
+								label={resources.checkboxLabel}
+								onClick={handleIsCheckedOnClick}
+								isChecked={isCheckboxChecked}
+							/>
+						</Block>
+
+						<LoginBtn canLogin={canLogin} onClick={handleCanLogin} />
 					</Block>
 					<Block
 						stack
 						style={{
-							width: '65%',
+							width: '55%',
 							backgroundImage: `url(${images.launcherImage})`,
 							backgroundRepeat: 'no-repeat',
 							backgroundSize: 'auto',
 						}}
-					>
-						{resources.title}
-					</Block>
+					/>
 				</Block>
 			</Block>
 		</InitialPage>

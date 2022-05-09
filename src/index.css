@@ -340,3 +340,21 @@ ul {
 		margin-right: 0.5rem;
 	}
 }
+
+input[type='checkbox'] {
+	appearance: none;
+	-webkit-appearance: none;
+	height: 1rem;
+	width: 1rem;
+	background-color: #ebebeb;
+	border-radius: 0.2rem;
+	cursor: pointer;
+}
+
+input[type='checkbox']:hover {
+	background-color: #e4e4e4;
+}
+
+input[type='checkbox']:after {
+	background-color: red;
+}
