@@ -1,1 +1,1 @@
-export * from './remConverter';
+export * from './getRandomSplashArt';

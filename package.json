@@ -1,51 +1,31 @@
 {
-	"homepage": "https://AlexandreFPGoncalves.github.io/Random-Number-Generator",
-	"name": "league-of-legends-launcher-react-clone",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@emotion/css": "^11.9.0",
-		"@testing-library/jest-dom": "^5.14.1",
-		"@testing-library/react": "^11.2.7",
-		"@testing-library/user-event": "^12.8.3",
-		"history": "^5.2.0",
-		"install": "^0.13.0",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"react-router-dom": "^6.2.1",
-		"react-scripts": "4.0.3",
-		"styled-components": "^5.3.3",
-		"typescript": "^4.5.5",
-		"web-vitals": "^1.1.2"
-	},
-	"scripts": {
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"devDependencies": {
-		"@types/styled-components": "^5.1.22",
-		"gh-pages": "^3.2.3"
-	}
+  "name": "lol-client",
+  "version": "0.1.0",
+  "author": "AlexandreFPGoncalves",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@radix-ui/react-icons": "^1.3.0",
+    "clsx": "^2.1.1",
+    "next": "^14.2.15",
+    "react": "^18",
+    "react-dom": "^18",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
 }
