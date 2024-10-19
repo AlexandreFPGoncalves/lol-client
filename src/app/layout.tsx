@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-zinc-900 w-full h-full">
+      <body className="bg-zinc-900 overflow-hidden">
         <div
           style={{ backgroundImage: `url(${getRandomSplashArt('StarGuardian').src})` }}
-          className="bg-cover bg-no-repeat"
+          className="bg-cover bg-no-repeat h-screen w-screen "
         >
           {children}
         </div>
