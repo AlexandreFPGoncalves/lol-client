@@ -6,7 +6,7 @@
     <h3 align="center">League of Legends Client</h3>
     <a href="https://github.com/AlexandreFPGoncalves/lol-client/wiki"><strong>Explore the Wiki </strong></a>
     <br />
-    <a href="">View Demo</a>
+    <a href="https://lol-client-five.vercel.app">View Demo</a>
     ·
     <a href="https://github.com/AlexandreFPGoncalves/lol-client/issues">Report Bug</a>
     ·
