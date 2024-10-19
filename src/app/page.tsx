@@ -88,8 +88,8 @@ export default function Home() {
 
             <div className="w-full flex justify-center">
               <button
-                className={`w-16 h-16 mt-14 rounded-2xl flex justify-center items-center ${
-                  isLoginFormValid ? 'bg-red-600' : 'bg-[#f5f5f5]'
+                className={`w-16 h-16 mt-14 rounded-2xl flex justify-center items-center transition-none ${
+                  isLoginFormValid ? 'bg-red-600 hover:bg-red-700' : 'bg-[#f5f5f5] hover:bg-[#e0e0e0]'
                 }`}
               >
                 <ArrowRightIcon className={`w-8 h-8 ${isLoginFormValid ? 'text-white' : 'text-[#919191]'} `} />
